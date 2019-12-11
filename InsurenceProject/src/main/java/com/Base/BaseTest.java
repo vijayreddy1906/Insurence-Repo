@@ -253,29 +253,7 @@ public class BaseTest {
 		driver.quit();
 		report.endTest(test);
 	}
-	
-	@Test
-	public void a(){
-		
-	}
-	@Test
-	public void b(){
-		throw new ArithmeticException();
-	}
-	
-	@Test
-	public void c(){
-		throw new ArithmeticException();
-	}
-	
-	@Test
-	public void d(){
-		
-	}
-	
-	
-	
-	
+
 	
 }
 
