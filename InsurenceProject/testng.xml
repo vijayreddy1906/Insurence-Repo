@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="Insurence QA Automation">
+
+
+<!-- if u are adding extentreport listners add hear -->
+
+
+ 	<listeners>
+		<!-- <listener class-name="com.listners.Listener"></listener> "it is used for the Extent Report Listeners"--> 
+		<listener class-name="com.listeners.RetryListener"/>
+	</listeners>
+
+	<test name="Insurence QA">
+
+
+		<classes>
+			<class name="com.Base.BaseTest"/>
+			<!-- if you created class to add in sequence addlike that -->
+		</classes>
+
+
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
