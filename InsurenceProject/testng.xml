@@ -9,7 +9,7 @@
 
 
  	<listeners>
-		<!-- <listener class-name="com.listners.Listener"></listener> "it is used for the Extent Report Listeners"--> 
+		<!-- <listener class-name="com.listeners.Listener"></listener> "it is used for the Extent Report Listeners"--> 
 		<listener class-name="com.listeners.RetryListener"/>
 	</listeners>
 

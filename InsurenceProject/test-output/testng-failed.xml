@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Insurence QA Automation]">
-  <listeners>
-    <listener class-name="com.listeners.RetryListener"/>
-  </listeners>
-  <test thread-count="5" name="Insurence QA(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.Base.BaseTest">
         <methods>
           <include name="initlization_SetUp"/>
           <include name="endListners"/>
+          <include name="aftersuite"/>
           <include name="listners"/>
-          <include name="b"/>
           <include name="tearDown"/>
-          <include name="c"/>
+          <include name="a"/>
         </methods>
       </class> <!-- com.Base.BaseTest -->
     </classes>
-  </test> <!-- Insurence QA(failed) -->
-</suite> <!-- Failed suite [Insurence QA Automation] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

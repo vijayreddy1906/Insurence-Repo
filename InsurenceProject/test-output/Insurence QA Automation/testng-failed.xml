@@ -10,10 +10,10 @@
         <methods>
           <include name="initlization_SetUp"/>
           <include name="endListners"/>
+          <include name="aftersuite"/>
           <include name="listners"/>
-          <include name="b"/>
           <include name="tearDown"/>
-          <include name="c"/>
+          <include name="a"/>
         </methods>
       </class> <!-- com.Base.BaseTest -->
     </classes>

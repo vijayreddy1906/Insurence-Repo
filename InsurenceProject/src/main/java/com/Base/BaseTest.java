@@ -1,5 +1,7 @@
 package com.Base;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.Iterator;
 import java.util.Properties;
@@ -21,6 +23,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -38,11 +41,12 @@ public class BaseTest {
 	public static String project_Directery=System.getProperty("user.dir");
 	public ExtentReports report;
 	public ExtentTest test;
+	public static String extentReportPath=project_Directery+"/target/Extent.html";//prop.getProperty("ExtentReportPath");
 	
 	
 	@BeforeTest
 	public void listners(){
-		report=new ExtentReports(project_Directery+"/target/Extent.html",true);
+		report=new ExtentReports(extentReportPath,true);
 	}
 	@AfterTest
 	public void endListners(){
@@ -253,7 +257,36 @@ public class BaseTest {
 		driver.quit();
 		report.endTest(test);
 	}
-
+	
+	@Test
+	public void a(){
+		System.out.println("abcd");
+	}
+/*	@Test
+	public void b(){
+		throw new ArithmeticException();
+	}
+	
+	@Test
+	public void c(){
+		throw new ArithmeticException();
+	}
+	
+	@Test
+	public void d(){
+		
+	}*/
+	
+@AfterSuite
+public void aftersuite() throws Exception{
+	
+	
+	File htmlFile = new File(extentReportPath);
+	Desktop.getDesktop().browse(htmlFile.toURI());
+//	email.sendEmailWithResults();
+}
+	
+	
 	
 }
 

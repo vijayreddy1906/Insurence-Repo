@@ -14,6 +14,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 
 import com.Base.BaseTest;
+import com.utils.Utilities;
 
 
 
@@ -24,18 +25,9 @@ public class Listener extends BaseTest implements ITestListener
 	{
 		if(!result.isSuccess())
 		{
-			try 
-			{
-				/*File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileHandler.copy(scrFile, new File(projectPath+"//failure//"+screenshotFileName));*/
-			} 
-			catch (Exception e) 
-			{
-				e.printStackTrace();
-			}
 			
-			/*Reporter.log("<a href='" + projectPath+"//failure//"+screenshotFileName + "'> <img src='" + projectPath+"//failure//"+screenshotFileName + "' height='100' width='100'/> </a>");
-			Reporter.log("Test has Failed:" + result.getMethod().getMethodName());*/
+			Reporter.log("<a href='" + Utilities.takescreenshots(result.getName()) + "'> <img src='" + Utilities.takescreenshots(result.getName()) + "' height='100' width='100'/> </a>");
+			Reporter.log("Test has Failed:" + result.getMethod().getMethodName());
 		}
 	}
 	
@@ -44,21 +36,10 @@ public class Listener extends BaseTest implements ITestListener
 	
 	public void onTestSuccess(ITestResult obj1) 
 	{
-		/*if(obj1.isSuccess())
+		if(obj1.isSuccess())
 		{
-			try 
-			{
-				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileHandler.copy(scrFile, new File(projectPath+"//success//"+screenshotFileName));
-			
-				Reporter.log("<a href='" + projectPath+"//success//"+screenshotFileName + "'> <img src='" + projectPath+"//success//"+screenshotFileName + "' height='100' width='100'/> </a>");
-				Reporter.log("Test has Success:" + obj1.getMethod().getMethodName());
-			} 
-			catch (IOException e) 
-			{
-				e.printStackTrace();
-			}
-		}*/
+			Reporter.log("Test has Success:" + obj1.getMethod().getMethodName());
+		}
 	}
 	
 	
